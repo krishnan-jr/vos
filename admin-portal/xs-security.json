@@ -1,0 +1,37 @@
+{
+  "xsappname": "vos-dev",
+  "tenant-mode": "dedicated",
+  "description": "Security profile of VOS Application",
+  "scopes": [
+    {
+      "name": "$XSAPPNAME.read",
+      "description": "read access"
+    },
+    {
+      "name": "$XSAPPNAME.write",
+      "description": "read access"
+    },
+    {
+      "name": "$XSAPPNAME.delete",
+      "description": "read access"
+    }
+  ],
+  "role-templates": [
+    {
+      "name": "User",
+      "description": "user role template",
+      "scope-references": [
+        "$XSAPPNAME.read"
+      ]
+    }
+  ],
+  "role-collections": [
+    {
+      "name": "VOS-Dev-User",
+      "description": "User role collection",
+      "role-template-references": [
+        "$XSAPPNAME.User"
+      ]
+    }
+  ]
+}
